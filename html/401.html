@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Unauthorized
+{% endblock %}
+
+{% block body %}
+    <h1>HTTP 1.1/401 &mdash; Unauthorized</h1>
+    <p>
+        No valid certificate provided. The certificate required to access this resource must be issued by <b>Swiss Government Root CA 1</b>.
+    </p>
+    <p>
+        If you cannot use a smart card certificate issued by the Swiss Government, try reinstalling the smart card reader driver or contact your system administrator.
+        The smart card reader driver can be downloaded from the <a href="https://cpl.thalesgroup.com/access-management/security-applications/credentialing-safenet-minidriver">Thales/Gemalto Minidriver website</a>.
+    </p>
+{% endblock %}
