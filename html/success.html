@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Success
+{% endblock %}
+
+{% block body %}
+    <h1>SUCCESS!! :)</h1>
+    <table>
+        <tr><td>Serial</td><td>{{ cert.get_serial_number() }}</td></tr>
+        <tr><td>Version</td><td>{{ cert.get_version() }}</td></tr>
+        <tr><td>SignAlg</td><td>{{ cert.get_signature_algorithm().decode("ascii") }}</td></tr>
+        <tr><td>SubjHash</td><td>{{ cert.subject_name_hash() }}</td></tr>
+    </table>
+    <br/>
+    <h3>Issuer</h3>
+    <table>
+        <tr><td>C</td><td>{{ issuer.get('C', None) }}</td></tr>
+        <tr><td>ST</td><td>{{ issuer.get('ST', None) }}</td></tr>
+        <tr><td>L</td><td>{{ issuer.get('L', None) }}</td></tr>
+        <tr><td>O</td><td>{{ issuer.get('O', None) }}</td></tr>
+        <tr><td>OU</td><td>{{ issuer.get('OU', None) }}</td></tr>
+        <tr><td>CN</td><td>{{ issuer.get('CN', None) }}</td></tr>
+        <tr><td>E</td><td>{{ issuer.get('emailAddress', None) }}</td></tr>
+    </table>
+    <br/>
+    <h3>Subject</h3>
+    <table>
+        <tr><td>C</td><td>{{ subject.get('C', None) }}</td></tr>
+        <tr><td>ST</td><td>{{ subject.get('ST', None) }}</td></tr>
+        <tr><td>L</td><td>{{ subject.get('L', None) }}</td></tr>
+        <tr><td>O</td><td>{{ subject.get('O', None) }}</td></tr>
+        <tr><td>OU</td><td>{{ subject.get('OU', None) }}</td></tr>
+        <tr><td>CN</td><td>{{ subject.get('CN', None) }}</td></tr>
+        <tr><td>2.16.840.1.113730.3.1.3</td><td>{{ subject.get('2.16.840.1.113730.3.1.3', None) }}</td></tr>
+        <tr><td>E</td><td>{{ subject.get('emailAddress', None) }}</td></tr>
+    </table>
+{% endblock %}
