@@ -44,6 +44,7 @@ X509_OID_SUBJECT_ALT_NAME = b'2.5.29.17'
 X509_OID_KEY_USAGE = b'2.5.29.15'
 X509_OID_EMPOLYEE_NUMBER = '2.16.840.1.113730.3.1.3'
 
+WEBSERVER_PORT : int = 6996
 ALLOWED_STATIC_FILES : list[str] = ['js', 'css', 'html', 'ttf', 'png', 'svg']
 
 
@@ -203,7 +204,7 @@ if __name__ == '__main__':
 
     app.run(
         host = '0.0.0.0',
-        port = 6996,
+        port = WEBSERVER_PORT,
         debug = False,
         threaded = True,
         ssl_context = sslctx,
